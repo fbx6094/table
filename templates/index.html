@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="nad">РАСПИСАНИЕ МАТЧЕЙ
+    <h2 style="position: absolute;z-index: 99999;color: #fff;font-family: proxima nova, sans-serif;font-size: 250%;left: 30%;width: 30%;
+    bottom: 88%;overflow: hidden;">РАСПИСАНИЕ МАТЧЕЙ</h1>
+    </div>
+
+    <img  class="bac" src="{{ url_for('static', filename='img/Group 103.png') }}" alt="">
+    <div id="result">
+        <div class="imgg">
+            <div>
+            <p style="position: absolute;color: #fff;left: 32%;z-index: 99999;font-size: 250%;top: -1.3%;">МАТЧ 1</p>
+            <p style="position: absolute;color: #00143E;left: 87.5%;z-index: 99999;font-size: 250%;top: -1.3%;">13:15</p>
+            <img src="{{ url_for('static', filename='img/Group 117.png') }}" alt="">
+            <p style="position: absolute;left: 44%;font-size: 300%;top: -2%;">{{ comand1 }}</p>
+            <p style="position: absolute;left: 59.5%;font-size: 250%;top: -1.5%;color: #fff;">{{ochkicomand1}}</p>
+            <p style="position: absolute;left: 72%;font-size: 300%;top: -2%;">{{ comand2 }}</p>
+            <p style="position: absolute;left: 67.5%;font-size: 250%;top: -1.5%;color: #ffffff;">{{ochkicomand2}}</p>
+        
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div>
+                <p style="position: absolute;color: #fff;left: 32%;z-index: 99999;font-size: 250%;top: 2.5%;">МАТЧ 2</p>
+                <p style="position: absolute;color: #00143E;left: 87.5%;z-index: 99999;font-size: 250%;top: 2.4%;">13:20</p>
+                <img src="{{ url_for('static', filename='img/Group 117.png') }}" alt="">
+                <p style="position: absolute;left: 44%;font-size: 300%;top: 1.5%;">{{ comand3 }}</p>
+                <p style="position: absolute;left: 59.5%;font-size: 250%;top: 2.2%;color: #ffffff;">{{ochkicomand3}}</p>
+                <p style="position: absolute;left: 72%;font-size: 300%;top: 1.5%;">{{ comand4 }}</p>
+                <p style="position: absolute;left: 67.5%;font-size: 250%;top: 2.3%;color: #ffffff;">{{ochkicomand4}}</p>
+                </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div>
+                <p style="position: absolute;color: #fff;left: 32%;z-index: 99999;font-size: 250%;top: 6%;">МАТЧ 3</p>
+                <p style="position: absolute;color: #00143E;left: 87.5%;z-index: 99999;font-size: 250%;top: 6%;">13:25</p>
+                <img src="{{ url_for('static', filename='img/Group 117.png') }}" alt="">
+                <p style="position: absolute;left: 44%;font-size: 300%;top: 5.3%;">{{ comand5 }}</p>
+                <p style="position: absolute;left: 59.5%;font-size: 250%;top:6%;color: #ffffff;">{{ochkicomand5}}</p>
+                <p style="position: absolute;left: 72%;font-size: 300%;top: 5.3%;">{{ comand6 }}</p>
+                <p style="position: absolute;left: 67.5%;font-size: 250%;top:6%;color: #ffffff;">{{ochkicomand6}}</p>
+                </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div>
+                <p style="position: absolute;color: #fff;left: 32%;z-index: 99999;font-size: 250%;top: 9.8%;">МАТЧ 4</p>
+                <p style="position: absolute;color: #00143E;left: 87.5%;z-index: 99999;font-size: 250%;top: 9.7%;">13:30</p>
+                <img src="{{ url_for('static', filename='img/Group 117.png') }}" alt="">
+                <p style="position: absolute;left: 44%;font-size: 300%;top: 9%;">{{ comand7 }}</p>
+                <p style="position: absolute;left: 59.5%;font-size: 250%;top:9.8%;color: #ffffff;">{{ochkicomand7}}</p>
+                <p style="position: absolute;left: 72%;font-size: 300%;top: 9%;">{{ comand8 }}</p>
+                <p style="position: absolute;left:  67.5%;font-size: 250%;top:9.8%;color: #ffffff;">{{ochkicomand8}}</p>
+                </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div>
+                <p style="position: absolute;color: #fff;left: 32%;z-index: 99999;font-size: 250%;top: 13.5%;">МАТЧ 5</p>
+                <p style="position: absolute;color: #00143E;left: 87.5%;z-index: 99999;font-size: 250%;top: 13.3%;">13:40</p>
+                <img src="{{ url_for('static', filename='img/Group 117.png') }}" alt="">
+                <p style="position: absolute;left: 44%;font-size: 300%;top: 12.5%;">{{ comand6 }}</p>
+                <p style="position: absolute;left: 59.5%;font-size: 250%;top:13.5%;color: #ffffff;">{{ochkicomand6}}</p>
+                <p style="position: absolute;left: 72%;font-size: 300%;top: 12.5%;">{{ comand7 }}</p>
+                <p style="position: absolute;left:  67.5%;font-size: 250%;top:13.5%;color: #ffffff;">{{ochkicomand7}}</p>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div>
+                <p style="position: absolute;color: #fff;left: 32%;z-index: 99999;font-size: 250%;top: 17%;">МАТЧ 6</p>
+                <p style="position: absolute;color: #00143E;left: 87.5%;z-index: 99999;font-size: 250%;top: 17%;">13:45</p>
+                <img src="{{ url_for('static', filename='img/Group 117.png') }}" alt="">
+                <p style="position: absolute;left: 44%;font-size: 300%;top: 16.3%;">{{ comand8 }}</p>
+                <p style="position: absolute;left: 59.5%;font-size: 250%;top:17%;color: #ffffff;">{{ochkicomand8}}</p>
+                <p style="position: absolute;left: 72%;font-size: 300%;top: 16.3%;">{{ comand1 }}</p>
+                <p style="position: absolute;left:  67.5%;font-size: 250%;top:17%;color: #ffffff;">{{ochkicomand1}}</p>
+            </div>
+            
+            <br>
+            <br>
+            <br>
+            <br>
+            <div>
+                <p style="position: absolute;color: #fff;left: 32%;z-index: 99999;font-size: 250%;top: 20.8%;">МАТЧ 7</p>
+                <p style="position: absolute;color: #00143E;left: 87.5%;z-index: 99999;font-size: 250%;top: 20.8%;">13:50</p>
+                <img src="{{ url_for('static', filename='img/Group 117.png') }}" alt="">
+                <p style="position: absolute;left: 44%;font-size: 300%;top: 20%;">{{ comand4 }}</p>
+                <p style="position: absolute;left: 59.5%;font-size: 250%;top:21%;color: #ffffff;">{{ochkicomand4}}</p>
+                <p style="position: absolute;left: 72%;font-size: 300%;top: 20%;">{{ comand5 }}</p>
+                <p style="position: absolute;left:  67.5%;font-size: 250%;top:21%;color: #ffffff;">{{ochkicomand5}}</p>
+            </div>
+            
+            <br>
+            <br>
+            <br>
+            <br>
+            <div>
+                <p style="position: absolute;color: #fff;left: 32%;z-index: 99999;font-size: 250%;top: 24.8%;">МАТЧ 8</p>
+                <p style="position: absolute;color: #00143E;left: 87.5%;z-index: 99999;font-size: 250%;top: 24.6%;">13:55</p>
+                <img src="{{ url_for('static', filename='img/Group 117.png') }}" alt="">
+                <p style="position: absolute;left: 44%;font-size: 300%;top: 24%;">{{ comand2 }}</p>
+                <p style="position: absolute;left: 59.5%;font-size: 250%;top:24.5%;color: #ffffff;">{{ochkicomand2}}</p>
+                <p style="position: absolute;left: 72%;font-size: 300%;top: 24%;">{{ comand3 }}</p>
+                <p style="position: absolute;left:  67.5%;font-size: 250%;top:24.5%;color: #ffffff;">{{ochkicomand3}}</p>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div>
+                <p style="position: absolute;color: #fff;left: 32%;z-index: 99999;font-size: 250%;top: 28.3%;">МАТЧ 9</p>
+                <p style="position: absolute;color: #00143E;left: 87.5%;z-index: 99999;font-size: 250%;top: 28%;">14:05</p>
+                <img src="{{ url_for('static', filename='img/Group 117.png') }}" alt="">
+                <p style="position: absolute;left: 44%;font-size: 300%;top: 27.5%;">{{ comand7 }}</p>
+                <p style="position: absolute;left: 59.5%;font-size: 250%;top:28.3%;color: #ffffff;">{{ochkicomand7}}</p>
+                <p style="position: absolute;left: 72%;font-size: 300%;top: 27.5%;">{{ comand4 }}</p>
+                <p style="position: absolute;left:  67.5%;font-size: 250%;top:28.3%;color: #ffffff;">{{ochkicomand4}}</p>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div>
+                <p style="position: absolute;color: #fff;left: 32%;z-index: 99999;font-size: 250%;top: 32%;">МАТЧ 10</p>
+                <p style="position: absolute;color: #00143E;left: 87.5%;z-index: 99999;font-size: 250%;top: 32%;">14:10</p>
+                <img src="{{ url_for('static', filename='img/Group 117.png') }}" alt="">
+                <p style="position: absolute;left: 44%;font-size: 300%;top: 31.5%;">{{ comand5 }}</p>
+                <p style="position: absolute;left: 59.5%;font-size: 250%;top:32%;color: #ffffff;">{{ochkicomand5}}</p>
+                <p style="position: absolute;left: 72%;font-size: 300%;top: 31.5%;">{{ comand2 }}</p>
+                <p style="position: absolute;left:  67.5%;font-size: 250%;top:32%;color: #ffffff;">{{ochkicomand2}}</p>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div>
+                <p style="position: absolute;color: #fff;left: 32%;z-index: 99999;font-size: 250%;top: 35.5%;">МАТЧ 11</p>
+                <p style="position: absolute;color: #00143E;left: 87.5%;z-index: 99999;font-size: 250%;top: 35.5%;">14:15</p>
+                <img src="{{ url_for('static', filename='img/Group 117.png') }}" alt="">
+                <p style="position: absolute;left: 44%;font-size: 300%;top: 35%;">{{ comand1 }}</p>
+                <p style="position: absolute;left: 59.5%;font-size: 250%;top:35.5%;color: #ffffff;">{{ochkicomand1}}</p>
+                <p style="position: absolute;left: 72%;font-size: 300%;top: 35%;">{{ comand3 }}</p>
+                <p style="position: absolute;left:  67.5%;font-size: 250%;top:35.5%;color: #ffffff;">{{ochkicomand3}}</p>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div>
+                <p style="position: absolute;color: #fff;left: 32%;z-index: 99999;font-size: 250%;top: 39.5%;">МАТЧ 12</p>
+                <p style="position: absolute;color: #00143E;left: 87.5%;z-index: 99999;font-size: 250%;top: 39%;">14:20</p>
+                <img src="{{ url_for('static', filename='img/Group 117.png') }}" alt="">
+                <p style="position: absolute;left: 44%;font-size: 300%;top: 38.5%;">{{ comand8 }}</p>
+                <p style="position: absolute;left: 59.5%;font-size: 250%;top:39.5%;color: #ffffff;">{{ochkicomand8}}</p>
+                <p style="position: absolute;left: 72%;font-size: 300%;top: 38.5%;">{{ comand6 }}</p>
+                <p style="position: absolute;left:  67.5%;font-size: 250%;top:39.5%;color: #ffffff;">{{ochkicomand6}}</p>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div>
+                <p style="position: absolute;color: #fff;left: 32%;z-index: 99999;font-size: 250%;top: 43%;">МАТЧ 13</p>
+                <p style="position: absolute;color: #00143E;left: 87.5%;z-index: 99999;font-size: 250%;top: 43%;">14:30</p>
+                <img src="{{ url_for('static', filename='img/Group 117.png') }}" alt="">
+                <p style="position: absolute;left: 44%;font-size: 300%;top: 42.5%;">{{ comand3 }}</p>
+                <p style="position: absolute;left: 59.5%;font-size: 250%;top:43%;color: #ffffff;">{{ochkicomand3}}</p>
+                <p style="position: absolute;left: 72%;font-size: 300%;top: 42.5%;">{{ comand5 }}</p>
+                <p style="position: absolute;left:  67.5%;font-size: 250%;top:43%;color: #ffffff;">{{ochkicomand5}}</p>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div>
+                <p style="position: absolute;color: #fff;left: 32%;z-index: 99999;font-size: 250%;top: 19.1%;">МАТЧ 14</p>
+                <p style="position: absolute;color: #00143E;left: 87.5%;z-index: 99999;font-size: 250%;top: 46.5%;">14:35</p>
+                <img src="{{ url_for('static', filename='img/Group 117.png') }}" alt="">
+                <p style="position: absolute;left: 44%;font-size: 300%;top: 13%;">{{ comand4 }}</p>
+                <p style="position: absolute;left: 59.5%;font-size: 250%;top:14%;color: #ffffff;">{{ochkicomand4}}</p>
+                <p style="position: absolute;left: 72%;font-size: 300%;top: 13%;">{{ comand8 }}</p>
+                <p style="position: absolute;left:  67.5%;font-size: 250%;top:14%;color: #ffffff;">{{ochkicomand8}}</p>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div>
+                <p style="position: absolute;color: #fff;left: 32%;z-index: 99999;font-size: 250%;top: 19.1%;">МАТЧ 15</p>
+                <p style="position: absolute;color: #00143E;left: 87.5%;z-index: 99999;font-size: 250%;top: 39%;">14:30</p>
+                <img src="{{ url_for('static', filename='img/Group 117.png') }}" alt="">
+                <p style="position: absolute;left: 44%;font-size: 300%;top: 13%;">{{ comand2 }}</p>
+                <p style="position: absolute;left: 59.5%;font-size: 250%;top:14%;color: #ffffff;">{{ochkicomand2}}</p>
+                <p style="position: absolute;left: 72%;font-size: 300%;top: 13%;">{{ comand7 }}</p>
+                <p style="position: absolute;left:  67.5%;font-size: 250%;top:14%;color: #ffffff;">{{ochkicomand7}}</p>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div>
+                <p style="position: absolute;color: #fff;left: 32%;z-index: 99999;font-size: 250%;top: 19.1%;">МАТЧ 16</p>
+                <p style="position: absolute;color: #00143E;left: 87.5%;z-index: 99999;font-size: 250%;top: 39%;">14:30</p>
+                <img src="{{ url_for('static', filename='img/Group 117.png') }}" alt="">
+                <p style="position: absolute;left: 44%;font-size: 300%;top: 13%;">{{ comand6 }}</p>
+                <p style="position: absolute;left: 59.5%;font-size: 250%;top:14%;color: #ffffff;">{{ochkicomand6}}</p>
+                <p style="position: absolute;left: 72%;font-size: 300%;top: 13%;">{{ comand4 }}</p>
+                <p style="position: absolute;left:  67.5%;font-size: 250%;top:14%;color: #ffffff;">{{ochkicomand4}}</p>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div>
+                <p style="position: absolute;color: #fff;left: 32%;z-index: 99999;font-size: 250%;top: 19.1%;">МАТЧ 17</p>
+                <img src="{{ url_for('static', filename='img/Group 117.png') }}" alt="">
+                <p style="position: absolute;left: 44%;font-size: 300%;top: 13%;">{{ comand6 }}</p>
+                <p style="position: absolute;left: 59.5%;font-size: 250%;top:14%;color: #ffffff;">{{ochkicomand6}}</p>
+                <p style="position: absolute;left: 72%;font-size: 300%;top: 13%;">{{ comand4 }}</p>
+                <p style="position: absolute;left:  67.5%;font-size: 250%;top:14%;color: #ffffff;">{{ochkicomand4}}</p>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div>
+                <p style="position: absolute;color: #fff;left: 32%;z-index: 99999;font-size: 250%;top: 19.1%;">МАТЧ 18</p>
+                <img src="{{ url_for('static', filename='img/Group 117.png') }}" alt="">
+                <p style="position: absolute;left: 44%;font-size: 300%;top: 13%;">{{ comand7 }}</p>
+                <p style="position: absolute;left: 59.5%;font-size: 250%;top:14%;color: #ffffff;">{{ochkicomand7}}</p>
+                <p style="position: absolute;left: 72%;font-size: 300%;top: 13%;">{{ comand3 }}</p>
+                <p style="position: absolute;left:  67.5%;font-size: 250%;top:14%;color: #ffffff;">{{ochkicomand3}}</p>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div>
+                <p style="position: absolute;color: #fff;left: 32%;z-index: 99999;font-size: 250%;top: 19.1%;">МАТЧ 19</p>
+                <img src="{{ url_for('static', filename='img/Group 117.png') }}" alt="">
+                <p style="position: absolute;left: 44%;font-size: 300%;top: 13%;">{{ comand8 }}</p>
+                <p style="position: absolute;left: 59.5%;font-size: 250%;top:14%;color: #ffffff;">{{ochkicomand8}}</p>
+                <p style="position: absolute;left: 72%;font-size: 300%;top: 13%;">{{ comand2 }}</p>
+                <p style="position: absolute;left:  67.5%;font-size: 250%;top:14%;color: #ffffff;">{{ochkicomand2}}</p>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div>
+                <p style="position: absolute;color: #fff;left: 32%;z-index: 99999;font-size: 250%;top: 19.1%;">МАТЧ 20</p>
+                <img src="{{ url_for('static', filename='img/Group 117.png') }}" alt="">
+                <p style="position: absolute;left: 44%;font-size: 300%;top: 13%;">{{ comand1 }}</p>
+                <p style="position: absolute;left: 59.5%;font-size: 250%;top:14%;color: #ffffff;">{{ochkicomand1}}</p>
+                <p style="position: absolute;left: 72%;font-size: 300%;top: 13%;">{{ comand5 }}</p>
+                <p style="position: absolute;left:  67.5%;font-size: 250%;top:14%;color: #ffffff;">{{ochkicomand5}}</p>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div>
+                <p style="position: absolute;color: #fff;left: 32%;z-index: 99999;font-size: 250%;top: 19.1%;">МАТЧ 21</p>
+                <img src="{{ url_for('static', filename='img/Group 117.png') }}" alt="">
+                <p style="position: absolute;left: 44%;font-size: 300%;top: 13%;">{{ comand3 }}</p>
+                <p style="position: absolute;left: 59.5%;font-size: 250%;top:14%;color: #ffffff;">{{ochkicomand3}}</p>
+                <p style="position: absolute;left: 72%;font-size: 300%;top: 13%;">{{ comand8 }}</p>
+                <p style="position: absolute;left:  67.5%;font-size: 250%;top:14%;color: #ffffff;">{{ochkicomand8}}</p>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div>
+                <p style="position: absolute;color: #fff;left: 32%;z-index: 99999;font-size: 250%;top: 19.1%;">МАТЧ 22</p>
+                <img src="{{ url_for('static', filename='img/Group 117.png') }}" alt="">
+                <p style="position: absolute;left: 44%;font-size: 300%;top: 13%;">{{ comand8 }}</p>
+                <p style="position: absolute;left: 59.5%;font-size: 250%;top:14%;color: #ffffff;">{{ochkicomand8}}</p>
+                <p style="position: absolute;left: 72%;font-size: 300%;top: 13%;">{{ comand2 }}</p>
+                <p style="position: absolute;left:  67.5%;font-size: 250%;top:14%;color: #ffffff;">{{ochkicomand2}}</p>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div>
+                <p style="position: absolute;color: #fff;left: 32%;z-index: 99999;font-size: 250%;top: 19.1%;">МАТЧ 23</p>
+                <img src="{{ url_for('static', filename='img/Group 117.png') }}" alt="">
+                <p style="position: absolute;left: 44%;font-size: 300%;top: 13%;">{{ comand4 }}</p>
+                <p style="position: absolute;left: 59.5%;font-size: 250%;top:14%;color: #ffffff;">{{ochkicomand4}}</p>
+                <p style="position: absolute;left: 72%;font-size: 300%;top: 13%;">{{ comand1 }}</p>
+                <p style="position: absolute;left:  67.5%;font-size: 250%;top:14%;color: #ffffff;">{{ochkicomand1}}</p>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div>
+                <p style="position: absolute;color: #fff;left: 32%;z-index: 99999;font-size: 250%;top: 19.1%;">МАТЧ 24</p>
+                <img src="{{ url_for('static', filename='img/Group 117.png') }}" alt="">
+                <p style="position: absolute;left: 44%;font-size: 300%;top: 13%;">{{ comand5 }}</p>
+                <p style="position: absolute;left: 59.5%;font-size: 250%;top:14%;color: #ffffff;">{{ochkicomand5}}</p>
+                <p style="position: absolute;left: 72%;font-size: 300%;top: 13%;">{{ comand7 }}</p>
+                <p style="position: absolute;left:  67.5%;font-size: 250%;top:14%;color: #ffffff;">{{ochkicomand7}}</p>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div>
+                <p style="position: absolute;color: #fff;left: 32%;z-index: 99999;font-size: 250%;top: 19.1%;">МАТЧ 25</p>
+                <img src="{{ url_for('static', filename='img/Group 117.png') }}" alt="">
+                <p style="position: absolute;left: 44%;font-size: 300%;top: 13%;">{{ comand8 }}</p>
+                <p style="position: absolute;left: 59.5%;font-size: 250%;top:14%;color: #ffffff;">{{ochkicomand8}}</p>
+                <p style="position: absolute;left: 72%;font-size: 300%;top: 13%;">{{ comand5 }}</p>
+                <p style="position: absolute;left:  67.5%;font-size: 250%;top:14%;color: #ffffff;">{{ochkicomand5}}</p>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div>
+                <p style="position: absolute;color: #fff;left: 32%;z-index: 99999;font-size: 250%;top: 19.1%;">МАТЧ 26</p>
+                <img src="{{ url_for('static', filename='img/Group 117.png') }}" alt="">
+                <p style="position: absolute;left: 44%;font-size: 300%;top: 13%;">{{ comand1 }}</p>
+                <p style="position: absolute;left: 59.5%;font-size: 250%;top:14%;color: #ffffff;">{{ochkicomand1}}</p>
+                <p style="position: absolute;left: 72%;font-size: 300%;top: 13%;">{{ comand7 }}</p>
+                <p style="position: absolute;left:  67.5%;font-size: 250%;top:14%;color: #ffffff;">{{ochkicomand7}}</p>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div>
+                <p style="position: absolute;color: #fff;left: 32%;z-index: 99999;font-size: 250%;top: 19.1%;">МАТЧ 27</p>
+                <img src="{{ url_for('static', filename='img/Group 117.png') }}" alt="">
+                <p style="position: absolute;left: 44%;font-size: 300%;top: 13%;">{{ comand6 }}</p>
+                <p style="position: absolute;left: 59.5%;font-size: 250%;top:14%;color: #ffffff;">{{ochkicomand6}}</p>
+                <p style="position: absolute;left: 72%;font-size: 300%;top: 13%;">{{ comand3 }}</p>
+                <p style="position: absolute;left:  67.5%;font-size: 250%;top:14%;color: #ffffff;">{{ochkicomand3}}</p>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div>
+                <p style="position: absolute;color: #fff;left: 32%;z-index: 99999;font-size: 250%;top: 19.1%;">МАТЧ 28</p>
+                <img src="{{ url_for('static', filename='img/Group 117.png') }}" alt="">
+                <p style="position: absolute;left: 44%;font-size: 300%;top: 13%;">{{ comand4 }}</p>
+                <p style="position: absolute;left: 59.5%;font-size: 250%;top:14%;color: #ffffff;">{{ochkicomand4}}</p>
+                <p style="position: absolute;left: 72%;font-size: 300%;top: 13%;">{{ comand2 }}</p>
+                <p style="position: absolute;left:  67.5%;font-size: 250%;top:14%;color: #ffffff;">{{ochkicomand2}}</p>
+            </div>
+            
+            
+
+
+        </div>
+
+
+    </div>
+    <div class="name">
+    
+
+    
+    <p>{{ochkicomand2}}</p>
+    <p>{{ochkicomand3}}</p>
+    <p>{{ochkicomand4}}</p>
+    <p>{{ochkicomand5}}</p>
+    <p>{{ochkicomand6}}</p>
+    <p>{{ochkicomand7}}</p>
+    <p>{{ochkicomand8}}</p>
+    </div>
+    <div>
+    <img  class="niz" src="{{ url_for('static', filename='img/нижняя плашка.png') }}" alt=""> 
+    <img style="position: absolute;width: 10%;top: 75%;left: 2%;" src="{{ url_for('static', filename='img/логотип белый 3.png') }}" alt="">
+    <img style="position: absolute;width: 50%;top: 85%;left: 25%;"src="{{ url_for('static', filename='img/Group 99.png') }}">
+    <img  style="position: absolute;width: 6%;top: 73%;left: 92%;"src="{{ url_for('static', filename='img/Group 98.png') }}">
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

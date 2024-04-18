@@ -1,0 +1,103 @@
+
+.raund0{
+    position: absolute;
+    font-size:200%;
+    left: 30%;
+    top: 35%;
+    
+
+}
+.raund1{
+    position: absolute;
+    left: 30%;
+    top: 45%;
+    font-size:200%;
+}
+.raund2{
+    position: absolute;
+    left: 40%;
+    top: 35%;
+    font-size:200%;
+
+}
+.raund3{
+    position: absolute;
+    left: 40%;
+    top: 45%;
+    font-size:200%;
+
+}
+.raund4{
+    position: absolute;
+    left: 50%;
+    top: 35%;
+    font-size:200%;
+
+
+}
+.raund5{
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    font-size:200%;
+
+
+}
+#result{
+    position: absolute;
+    width: 100%;
+    background-color: rgb(255, 255, 255,0);
+    height: 43%;
+    left: -13%;
+    top: 20%;
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    
+
+
+}
+
+.imgg img{
+    width: 65%;
+    position: absolute;
+    left: 30%;
+    
+}
+.imgg{
+    width: 100%;
+    position: absolute;
+    color: #00143E;
+    font-family: 'proxima nova';
+
+}
+
+
+body{
+    background: linear-gradient(180deg, rgba(94, 0, 214, 0) -38.47%, #5E00D0 100%), #1400FF;
+   
+    overflow: hidden;
+}
+.bac{
+    position: relative;
+    left: -50px;
+    top: -10px;
+
+}
+.niz{
+    position: absolute;
+    top: 65%;
+    left: 0%;
+    width: 100%;
+}
+@font-face {
+    font-family: 'proxima nova';
+    src: url('fonts/your-custom-font.woff2') format('woff2'), /* Формат шрифта */
+         url('ProximaNova-Extrabld.ttf') format('ttf');
+    /* Другие форматы шрифта, если необходимо */
+}
+.nad{
+    position: absolute;z-index: 99999;color: #fff;font-family: proxima nova, sans-serif;font-size: 250%;left: 35%;width: 30%;
+    bottom: 90%;overflow: hidden;
+}

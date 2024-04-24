@@ -1,13 +1,7 @@
-from flask import Flask, render_template, request, redirect, jsonify
+from flask import Flask, render_template, jsonify
 from requests import get
 
 app = Flask(__name__)
-
-
-
-@app.route('/')
-def index():
-    return render_template('index.html')
 
 @app.route('/scores', methods=['GET'])
 def get_scores():
@@ -19,6 +13,9 @@ def get_scores():
         print(e)
         return jsonify({"error": "Error fetching data"})
 
+@app.route('/')
+def index():
+    return render_template('index.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

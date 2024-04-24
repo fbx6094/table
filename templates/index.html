@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/static/style.css">
     <title>
         Screen
     </title>
@@ -39,6 +39,7 @@
             height: 61px;
             background-color: #12B72D;
             opacity: 0.8;
+            animation: load 131s linear infinite;
             animation: load 131s linear infinite;
             animation-iteration-count: 1;
         }
@@ -92,7 +93,7 @@
         </ul>
     </div>
     <div class="app" id="app">
-        <h1>{{ result.final_winner }}</h1>
+        <!-- <h1>{{result}}</h1> -->
         <div class="backroudn_for_titles"></div>
         <div class="title_left" style="position: absolute; top:1.6%; left: 2%;">Робототехнический турнир “ТЕХНОДВИЖ”
             2023/2024</div>
@@ -107,7 +108,7 @@
         <div class="blue_upper_background_with_curve"></div>
         <div class="score_background"></div>
         <div class="blue_upper_background"></div>
-        <div class="score">{{result.score_team_1, ":", result.score_team_2}}</div>
+        <div class="score">{{result.score_team_1}}:{{result.score_team_2}}</div>
         <!-- <div class="grid_for_team_names"> -->
         <div class="datateam2" id="datateam2">{{result.final_winner}}</div>
         <div class="finalwinner" id="finalwinner">Победитель</div>
@@ -144,21 +145,21 @@
         </div>
         <div class="streets_container" style="position: absolute; top: 45%; left: 17%">
             <div class="houses_container">
-                <div :class="result.team_1_score_street_1 == '4' ? 'triangle_green': 'triangle'"></div>
-                <div class="house_white" v-for="house in 4-result.team_1_score_street_1"></div>
-                <div class="house_green" v-for="house in result.team_1_score_street_1"></div>
+                <div :class="data.team_1_score_street_1 == '4' ? 'triangle_green': 'triangle'"></div>
+                <div class="house_white" v-for="house in 4-data.team_1_score_street_1"></div>
+                <div class="house_green" v-for="house in data.team_1_score_street_1"></div>
                 <div class="street_label">ул.Медиа</div>
             </div>
             <div class="houses_container">
-                <div :class="result.team_1_score_street_2 == '4' ? 'triangle_green': 'triangle'"></div>
-                <div class="house_white" v-for="house in 4-result.team_1_score_street_2"></div>
-                <div class="house_green" v-for="house in result.team_1_score_street_2"></div>
+                <div :class="data.team_1_score_street_2 == '4' ? 'triangle_green': 'triangle'"></div>
+                <div class="house_white" v-for="house in 4-data.team_1_score_street_2"></div>
+                <div class="house_green" v-for="house in data.team_1_score_street_2"></div>
                 <div class="street_label">ул.Первых</div>
             </div>
             <div class="houses_container">
-                <div :class="result.team_1_score_street_3 == '4' ? 'triangle_green': 'triangle'"></div>
-                <div class="house_white" v-for="house in 4-result.team_1_score_street_3"></div>
-                <div class="house_green" v-for="house in result.team_1_score_street_3"></div>
+                <div :class="data.team_1_score_street_3 == '4' ? 'triangle_green': 'triangle'"></div>
+                <div class="house_white" v-for="house in 4-data.team_1_score_street_3"></div>
+                <div class="house_green" v-for="house in data.team_1_score_street_3"></div>
                 <div class="street_label">ул.Истории</div>
             </div>
         </div>
@@ -166,21 +167,21 @@
 
         <div class="streets_container" style="position: absolute; top: 45%; left: 67%">
             <div class="houses_container">
-                <div :class="result.team_2_score_street_1 == '4' ? 'triangle_green': 'triangle'"></div>
-                <div class="house_white" v-for="house in 4-result.team_2_score_street_1"></div>
-                <div class="house_green" v-for="house in result.team_2_score_street_1"></div>
+                <div :class="data.team_2_score_street_1 == '4' ? 'triangle_green': 'triangle'"></div>
+                <div class="house_white" v-for="house in 4-data.team_2_score_street_1"></div>
+                <div class="house_green" v-for="house in data.team_2_score_street_1"></div>
                 <div class="street_label">ул.Медиа</div>
             </div>
             <div class="houses_container">
-                <div :class="result.team_2_score_street_2 == '4' ? 'triangle_green': 'triangle'"></div>
-                <div class="house_white" v-for="house in 4-result.team_2_score_street_2"></div>
-                <div class="house_green" v-for="house in result.team_2_score_street_2"></div>
+                <div :class="data.team_2_score_street_2 == '4' ? 'triangle_green': 'triangle'"></div>
+                <div class="house_white" v-for="house in 4-data.team_2_score_street_2"></div>
+                <div class="house_green" v-for="house in data.team_2_score_street_2"></div>
                 <div class="street_label">ул.Первых</div>
             </div>
             <div class="houses_container">
-                <div :class="result.team_2_score_street_3 == '4' ? 'triangle_green': 'triangle'"></div>
-                <div class="house_white" v-for="house in 4-result.team_2_score_street_3"></div>
-                <div class="house_green" v-for="house in result.team_2_score_street_3"></div>
+                <div :class="data.team_2_score_street_3 == '4' ? 'triangle_green': 'triangle'"></div>
+                <div class="house_white" v-for="house in 4-data.team_2_score_street_3"></div>
+                <div class="house_green" v-for="house in data.team_2_score_street_3"></div>
                 <div class="street_label">ул.Истории</div>
             </div>
         </div>
@@ -188,9 +189,9 @@
 
         <div class="streets_container" style="position: absolute; top: 43%; left: 50%; transform: translate(-50%)">
             <div class="houses_container">
-                <div :class="result.team_score_street_main == '4' ? 'big_triangle_green': 'big_triangle'"></div>
-                <div class="big_house_white" v-for="house in 4-result.team_score_street_main"></div>
-                <div class="big_house_green" v-for="house in result.team_score_street_main"></div>
+                <div :class="data.team_score_street_main == '4' ? 'big_triangle_green': 'big_triangle'"></div>
+                <div class="big_house_white" v-for="house in 4-data.team_score_street_main"></div>
+                <div class="big_house_green" v-for="house in data.team_score_street_main"></div>
                 <div class="skysraper_label">НЕБОСКРЕБ</div>
             </div>
         </div>
@@ -202,40 +203,40 @@
         const { onMounted, createApp, ref } = Vue;
         createApp({
             setup() {
-                // const message = ref("Hello vue!");
-                // const data = ref({
-                //     final_winner: "null",
-                //     id: "adsadsadsadasdasd",
-                //     score_team_1: "0",
-                //     name_team_1: "Name 1",
-                //     score_team_2: "0",
-                //     name_team_2: "Name 2",
-                //     timer: true,
-                //     timer_start: "2018-25-12 23:50:55",
-                //     timer_end: "2018-25-12 23:50:55",
-                //     team_1_score_street_1: 0,
-                //     team_1_score_street_2: 0,
-                //     team_1_score_street_3: 0,
-                //     team_2_score_street_1: 0,
-                //     team_2_score_street_2: 0,
-                //     team_2_score_street_3: 0,
-                //     team_score_street_main: 0,
-                //     progress_bar_state: 0,
-                //     state_of_vidget: 0,
-                //     final_winner_score: 0,
-                // });
-                // const fetchData = () => {
-                //     setInterval(() => {
-                //         fetch("http://193.164.149.85:5000/scores").then((result) =>
+                const message = ref("Hello vue!");
+                const data = ref({
+                    final_winner: "null",
+                    id: "adsadsadsadasdasd",
+                    score_team_1: "0",
+                    name_team_1: "Name 1",
+                    score_team_2: "0",
+                    name_team_2: "Name 2",
+                    timer: true,
+                    timer_start: "2018-25-12 23:50:55",
+                    timer_end: "2018-25-12 23:50:55",
+                    team_1_score_street_1: 0,
+                    team_1_score_street_2: 0,
+                    team_1_score_street_3: 0,
+                    team_2_score_street_1: 0,
+                    team_2_score_street_2: 0,
+                    team_2_score_street_3: 0,
+                    team_score_street_main: 0,
+                    progress_bar_state: 0,
+                    state_of_vidget: 0,
+                    final_winner_score: 0,
+                });
+                const fetchData = () => {
+                    setInterval(() => {
+                        fetch("http://193.164.149.85:5000/scores").then((result) =>
 
-                //             //fetch("http://185.68.22.42:3000/scores").then((result) =>
-                //             result.json().then((res) => {
-                //                 result.value = res[0];
-                //             })
-                //         );
-                //     }, 100); // Обновление каждые n секунды
-                // };
-                // fetchData();
+                            //fetch("http://185.68.22.42:3000/scores").then((result) =>
+                            result.json().then((res) => {
+                                data.value = res[0];
+                            })
+                        );
+                    }, 100); // Обновление каждые n секунды
+                };
+                fetchData();
 
                 let prev_timer = 0;
                 let timerToggled;

@@ -39,6 +39,8 @@ def index():
     response = get("http://193.164.149.85:5000/scores")
     result = response.json()[0]
     return render_template('index.html', result=result)
+    # return render_template('tmp.html', result=result)
+    
 
 if __name__ == '__main__':
     app.run(debug=True)

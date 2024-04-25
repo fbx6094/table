@@ -1,46 +1,86 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, jsonify, request, redirect, session, url_for
 from requests import get
+from flask_sqlalchemy import SQLAlchemy
+from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
+app.secret_key = 'your_secret_key'  # Замените на свой секретный ключ
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'  # Используем SQLite для простоты, можно заменить на другую БД
+db = SQLAlchemy(app)
 
 @app.route('/scores', methods=['GET'])
 def get_scores():
     try:
         response = get("http://193.164.149.85:5000/scores")
         result = response.json()[0]
-        # return jsonify(result[0])
-        final_winner = result['final_winner']
-        final_winner_score = result['final_winner_score']
-        id = result['id']
-        name_team_1 = result['name_team_1']
-        name_team_2 = result['name_team_2']
-        progress_bar_state = result['progress_bar_state']
-        score_team_1 = result['score_team_1']
-        score_team_2 = result['score_team_2']
-        score_teams = result['score_teams']
-        state_of_vidget = result['state_of_vidget']
-        team_1_score_street_1 = result['team_1_score_street_1']
-        team_1_score_street_2 = result['team_1_score_street_2']
-        team_1_score_street_3 = result['team_1_score_street_3']
-        team_2_score_street_1 = result['team_2_score_street_1']
-        team_2_score_street_2 = result['team_2_score_street_2']
-        team_2_score_street_3 = result['team_2_score_street_3']
-        team_score_street_main = result['team_score_street_main']
-        timer = result['timer']
-        timer_end = result['timer_end']
-        timer_start = result['timer_start']
-        return jsonify(final_winner=final_winner, final_winner_score=final_winner_score, id=id, name_team_1=name_team_1, name_team_2=name_team_2, progress_bar_state=progress_bar_state, score_team_1=score_team_1, score_team_2=score_team_2, score_teams=score_teams, state_of_vidget=state_of_vidget, team_1_score_street_1=team_1_score_street_1, team_1_score_street_2=team_1_score_street_2, team_1_score_street_3=team_1_score_street_3, team_2_score_street_1=team_2_score_street_1, team_2_score_street_2=team_2_score_street_2, team_2_score_street_3=team_2_score_street_3, team_score_street_main=team_score_street_main, timer=timer, timer_end=timer_end, timer_start=timer_start)
+        return jsonify(result)
     except Exception as e:
         print(e)
         return jsonify({"error": "Error fetching data"})
 
 @app.route('/')
-def index():
+def home():
     response = get("http://193.164.149.85:5000/scores")
     result = response.json()[0]
-    return render_template('index.html', result=result)
-    # return render_template('tmp.html', result=result)
-    
+    return render_template('home.html', result=result)
+
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(100), unique=True, nullable=False)
+    password = db.Column(db.String(100), nullable=False)
+
+# Создание всех таблиц в базе данных
+db.create_all()
+
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        
+        # Проверяем, есть ли пользователь с таким именем уже в базе
+        existing_user = User.query.filter_by(username=username).first()
+        if existing_user:
+            return 'Пользователь с таким именем уже существует!'
+        
+        # Хэшируем пароль
+        hashed_password = generate_password_hash(password, method='sha256')
+        
+        # Создаем нового пользователя
+        new_user = User(username=username, password=hashed_password)
+        db.session.add(new_user)
+        db.session.commit()
+        
+        return redirect(url_for('login'))
+
+    return render_template('register.html')
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        
+        # Проверяем, существует ли пользователь с таким именем
+        user = User.query.filter_by(username=username).first()
+        if user and check_password_hash(user.password, password):
+            # Если пользователь существует и пароль совпадает, авторизуем его
+            session['username'] = username
+            return redirect(url_for('index'))
+        
+        return 'Неверное имя пользователя или пароль!'
+
+    return render_template('login.html')
+
+@app.route('/logout')
+def logout():
+    # Удаляем пользователя из сессии, выход из учетной записи
+    session.pop('username', None)
+    return redirect(url_for('index'))
+
+@app.route('/index')
+def index():
+    return render_template('index.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

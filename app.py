@@ -30,7 +30,7 @@ class User(db.Model):
     password = db.Column(db.String(100), nullable=False)
 
 # Создание всех таблиц в базе данных
-db.create_all()
+# db.create_all()
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -44,7 +44,8 @@ def register():
             return 'Пользователь с таким именем уже существует!'
         
         # Хэшируем пароль
-        hashed_password = generate_password_hash(password, method='sha256')
+        # hashed_password = generate_password_hash(password, method='sha256')
+        hashed_password = generate_password_hash(password, method='pbkdf2:sha1', salt_length=8)
         
         # Создаем нового пользователя
         new_user = User(username=username, password=hashed_password)
@@ -80,7 +81,11 @@ def logout():
 
 @app.route('/index')
 def index():
-    return render_template('index.html')
+    response = get("http://193.164.149.85:5000/scores")
+    result = response.json()[0]
+    return render_template('home.html', result=result)
 
 if __name__ == '__main__':
+    with app.app_context():
+        db.create_all()
     app.run(debug=True)

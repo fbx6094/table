@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -15,4 +15,498 @@
         <input type="submit" value="Register">
     </form>
 </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+
+<body>
+    <style>
+        .blue {
+            position: absolute;
+            top: 0%;
+            left: 0;
+            width: 100%;
+            height: 6%;
+            background-color: #044AF0;
+        }
+
+        .error {
+            position: absolute;
+            color: red;
+            top: 65%;
+            left: 52%;
+            transform: translate(-50%, -50%)
+        }
+
+        .error0 {
+            position: absolute;
+            color: red;
+            top: 73%;
+            left: 52%;
+            transform: translate(-50%, -50%)
+        }
+
+        .continer {
+            position: absolute;
+            top: 20%;
+            left: 25%;
+            width: 50%;
+            height: 55%;
+            background-color: #52ac52;
+
+        }
+
+        .vhod {
+            position: absolute;
+            top: 10%;
+            left: 45%;
+            font-size: 90px;
+            color: #0051FF;
+            font-family: Proxima Nova;
+        }
+
+        body {
+            overflow: hidden;
+        }
+
+        .input1 {
+            position: absolute;
+            top: 35%;
+            width: 40%;
+            left: 30%;
+            height: 5%;
+            border-radius: 40px;
+            border-color: #0051FF;
+        }
+
+        .input2 {
+            position: absolute;
+            top: 45%;
+            left: 30%;
+            width: 40%;
+            height: 5%;
+            border-radius: 40px;
+            border-color: #0051FF;
+        }
+
+        .knopka {
+            position: absolute;
+            top: 55%;
+            color: white;
+            left: 46%;
+            font-size: 15px;
+            width: 10%;
+            height: 4%;
+            background-color: red;
+            border-radius: 40px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .knopka:hover {
+            animation: glowAnimation 2s infinite;
+        }
+
+        .knopka1:hover {
+            animation: glowAnimation 2s infinite;
+        }
+
+        @keyframes glowAnimation {
+            0% {
+                box-shadow: 0 0 0 red;
+            }
+
+            50% {
+                box-shadow: 0 0 30px red;
+            }
+
+            100% {
+                box-shadow: 0 0 0 red;
+            }
+        }
+
+        .blue2 {
+            position: absolute;
+            top: 80%;
+            left: 0;
+            width: 100%;
+            height: 20%;
+            background-color: #044AF0;
+        }
+
+        .reg {
+            position: absolute;
+            color: #044AF0;
+            top: 42%;
+            left: 50%;
+            text-decoration: none;
+        }
+
+        .reg a:link {
+            color: #044AF0;
+            text-decoration: none;
+        }
+
+        .reg a:visited {
+            color: #044AF0;
+        }
+
+        .reg a:hover {
+            color: red;
+        }
+
+        .input0 {
+            position: absolute;
+            top: 25%;
+            left: 30%;
+            width: 40%;
+            height: 5%;
+            border-radius: 40px;
+            border-color: #0051FF;
+        }
+
+        .regg {
+            position: absolute;
+            top: 8%;
+            left: 39%;
+            font-size: 60px;
+            color: #0051FF;
+            font-family: Proxima Nova;
+        }
+
+        .knopka1 {
+            position: absolute;
+            top: 48%;
+            color: white;
+            font-size: 18px;
+            width: 12%;
+            left: 45.5%;
+            height: 5%;
+            background-color: red;
+            border-radius: 40px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .galka {
+            position: absolute;
+            top: 54%;
+            width: 5%;
+            left: 30%;
+            height: 2%;
+        }
+
+        .inactiveButton {
+            position: absolute;
+            top: 65%;
+            color: white;
+            font-size: 18px;
+            width: 12%;
+            left: 45.5%;
+            height: 5%;
+            background-color: rgb(102, 102, 102);
+            border-radius: 40px;
+            border: none;
+            cursor: not-allowed;
+
+        }
+
+        .zakon {
+            position: absolute;
+            font-size: 15px;
+            width: 35%;
+            color: #0051FF;
+            top: 52%;
+            left: 34%;
+
+        }
+
+        .reg0 {
+            position: absolute;
+            color: #044AF0;
+            top: 50%;
+            left: 47%;
+            text-decoration: none;
+        }
+
+        .reg0 a:link {
+            color: #044AF0;
+            text-decoration: none;
+        }
+
+        .reg0 a:visited {
+            color: #044AF0;
+        }
+
+        .reg0 a:hover {
+            color: red;
+        }
+
+        .logo {
+            position: absolute;
+            left: 0%;
+            top: -15%;
+
+        }
+
+        @media (min-width: 840px) and (max-width: 1200px) {
+            .regg {
+                font-size: 40px;
+            }
+
+            .zakon {
+                font-size: 10px;
+            }
+
+            .reg {
+                font-size: 14px;
+                top: 58%;
+                left: 49%;
+            }
+
+            .knopka1 {
+                width: 20%;
+                left: 42%;
+            }
+
+            .inactiveButton {
+                width: 20%;
+                left: 42%;
+            }
+        }
+
+        @media (min-width: 619px) and (max-width: 842px) {
+            .zakon {
+                font-size: 10px;
+                width: 50%;
+                left: 31%;
+            }
+
+            .regg {
+                font-size: 40px;
+                left: 32%;
+            }
+
+            .galka {
+                left: 25%;
+            }
+
+            .reg {
+                font-size: 14px;
+                top: 58%;
+                left: 49%;
+            }
+
+            .knopka1 {
+                width: 25%;
+                left: 39%;
+            }
+
+            .inactiveButton {
+                width: 25%;
+                left: 39%;
+            }
+
+        }
+
+        @media (min-width: 440px) and (max-width: 618px) {
+            .regg {
+                font-size: 35px;
+                left: 30%;
+                top: 12%;
+            }
+
+            .zakon {
+                font-size: 9px;
+                width: 65%;
+                left: 25%;
+
+            }
+
+            .vhod {
+                font-size: 80px;
+                left: 35%;
+            }
+
+            .reg0 {
+                font-size: 14px;
+                left: 40%;
+            }
+
+            .knopka {
+                width: 30%;
+                left: 36%;
+            }
+
+            .galka {
+                left: 20%;
+            }
+
+            .reg {
+                font-size: 14px;
+                top: 58%;
+                left: 49%;
+            }
+
+            .knopka1 {
+                width: 35%;
+                left: 35%;
+            }
+
+            .inactiveButton {
+                width: 35%;
+                left: 35%;
+            }
+        }
+
+        @media (min-width: 100px) and (max-width: 439px) {
+            .reg {
+                font-size: 13px;
+                top: 58%;
+            }
+
+            .input0 {
+                width: 60%;
+                left: 20%;
+            }
+
+            .input1 {
+                width: 60%;
+                left: 20%;
+            }
+
+            .input2 {
+                width: 60%;
+                left: 20%;
+            }
+
+            .knopka1 {
+                width: 45%;
+                left: 30%;
+                font-size: 13px;
+                height: 4%;
+            }
+
+            .inactiveButton {
+                width: 45%;
+                left: 30%;
+                font-size: 13px;
+                height: 4%;
+            }
+
+            .galka {
+                left: 10%;
+            }
+
+            .zakon {
+                font-size: 8.5px;
+                width: 75%;
+                left: 20%;
+
+            }
+
+            .regg {
+                font-size: 25px;
+                left: 20%;
+                top: 12%;
+            }
+
+            .logo {
+                width: 75%;
+                top: 10%;
+            }
+
+            .vhod {
+                font-size: 60px;
+                top: 15%;
+                left: 35%;
+            }
+
+            .reg0 {
+                font-size: 13px;
+                left: 35%;
+            }
+
+            .knopka {
+                width: 50%;
+                left: 25%;
+            }
+
+
+        }
+
+        @media (max-height: 560px) {
+            .vhod {
+                font-size: 70px;
+                top: -3%;
+            }
+
+            .knopka {
+                width: 20%;
+                height: 8%;
+                top: 60%;
+                left: 42%;
+            }
+
+            .reg0 {
+                font-size: 13px;
+                left: 45%;
+            }
+
+            .blue {
+                height: 10%;
+            }
+
+            .logo {
+                width: 30%;
+                left: -5%;
+                top: 0%;
+            }
+
+        }
+    </style>
+    <div>
+        <p class="reg">
+            <a href="/login">Войти</a>
+        </p>
+        <div class="blue">
+            <img class="logo"
+                src="https://media.discordapp.net/attachments/1034063560097153036/1233170054963794011/logo.png?ex=662c1e9c&is=662acd1c&hm=e1a5fa24b029b943a6307b00487dcf6f8a63f8fe5eff76cc5d18b7f741969530&=&format=webp&quality=lossless"
+                alt="Logo" />
+        </div>
+        <div class="blue2"></div>
+        <!-- <form method="post" action="{{ url_for('register') }}"> -->
+        <!-- <label for="username">Username:</label><br> -->
+        <!-- <label for="password">Password:</label><br> -->
+        <!-- </form> -->
+        <form method="post" action="{{ url_for('register') }}">
+            <h2 class="regg">РЕГИСТРАЦИЯ</h2>
+            <input class="input0" placeholder=" Имя пользователя" type="text" id="username" name="username" required><br>
+            <input class="input1" placeholder=" Пароль" type="password" id="password" name="password" required><br>
+            <!-- <input class="input2" placeholder="Пароль" type="password" id="password" name="password" required><br> -->
+            <!-- <input type="submit" value="Register"> -->
+            <!-- <input class="input0" placeholder="Почта" />
+            <input class="input1" placeholder="Пароль" />
+            <input class="input2" placeholder="Пароль" /> -->
+            <!-- <p class="zakon">Нажимая на данную кнопку, в соответствии с п. 4 ст. 9 Федерального закона от 27.07.2006
+                N 152-ФЗ «О персональных данных», Вы даете согласие на обработку своих персональных данных и (или)
+                персональных
+                данных представляемого лица.</p> -->
+            <!-- <input type="checkbox" class="galka" checked={isChecked} onChange={handleCheckboxChange} />
+            <button class={isChecked ? 'knopka1' : 'inactiveButton' } onClick={handleButtonClick}
+                disabled={!isChecked}>Зарегистрироваться</button> -->
+            <!-- <input type="checkbox" class="galka" id="galka" /> -->
+            <input type="submit" value="Register" for="galka" class="knopka1" id="knopka1"></input>
+            <p class="error0" id="error0" style="color: red;"></p>
+        </form>
+    </div>
+</body>
+
 </html>

@@ -22,7 +22,7 @@ def get_scores():
 def home():
     response = get("http://193.164.149.85:5000/scores")
     result = response.json()[0]
-    return render_template('home.html', result=result)
+    return render_template('redir.html', result=result)
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -41,7 +41,8 @@ def register():
         # Проверяем, есть ли пользователь с таким именем уже в базе
         existing_user = User.query.filter_by(username=username).first()
         if existing_user:
-            return 'Пользователь с таким именем уже существует!'
+            # return 'Пользователь с таким именем уже существует!'
+            return render_template("somethingwentwrong.html")
         
         # Хэшируем пароль
         # hashed_password = generate_password_hash(password, method='sha256')
